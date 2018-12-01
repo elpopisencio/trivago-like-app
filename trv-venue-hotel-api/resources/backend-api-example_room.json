@@ -1,0 +1,7 @@
+{
+    "id": "bf2b9853-7cec-47bf-ba3d-3ba765061db7",
+    "name": "Deluxe suite",
+    "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr.", 
+    "max_occupancy": 4,
+    "price_in_usd": 78.90 
+}
