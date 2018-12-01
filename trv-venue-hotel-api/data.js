@@ -1,4 +1,4 @@
-var faker = require('faker')
+const faker = require('faker')
 
 function getPriceCategory(){
 	const categories = ['low', 'medium', 'high'];
@@ -34,5 +34,22 @@ const hotels = Array(6)
 		"images": getImages(),
   }));
 
-console.log(hotels);
+const rooms = hotels.reduce((total, current) => {
+	const currentHotelRooms = Array(faker.random.number(4) + 2)
+	.fill()
+	.map(() => ({
+		"id": faker.random.uuid(),
+		"name": faker.commerce.productAdjective() + ' suite',
+		"description": faker.lorem.sentence(),
+		"max_occupancy": faker.random.number(4) + 1,
+		"price_in_usd": faker.random.number(1000) / 10,
+		"hotel_id": current.id,
+  }));
+  return [...total, ...currentHotelRooms];
+}, []);
 
+function data(){
+	return {hotels, rooms};
+}
+
+module.exports = data;
