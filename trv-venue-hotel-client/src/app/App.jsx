@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import Header from './header/Header';
 import Home from './home/Home';
 import Hotel from './hotel/Hotel';
 import Confirmation from './confirmation/Confirmation';
@@ -10,6 +11,7 @@ export default class App extends Component {
     return (
       <Router>
         <Fragment>
+          <Header />
           <Route exact path="/" render={props => <Home {...props} />} />
           <Route path="/hotel" render={props => <Hotel {...props} />} />
           <Route path="/confirmation" render={props => <Confirmation {...props} />} />
