@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import Hotel from './hotel/Hotel';
 
-const Container = styled.header`
+const Container = styled.div`
 	background-color: #37454d;
 	height: 100vh;
 	margin: auto;
-	border: 1px solid #c3c3c3;
-	border-width: 0 1px 0 1px;
 `;
 
 export default class Home extends Component {
@@ -16,8 +15,10 @@ export default class Home extends Component {
 	}
 	componentDidMount = () => {
 		axios.get('/hotels')
-			.then(function (response) {
-				console.log(response);
+			.then((response) => {
+				this.setState({
+					hotels: response.data,
+				})
 			})
 			.catch(function (error) {
 				console.log(error);
@@ -26,9 +27,18 @@ export default class Home extends Component {
 			});
 	}
 	render = () => {
+		const { hotels } = this.state;
 		return (
 			<Container>
-				Home
+				{
+					hotels.length !== 0 
+						? 
+							hotels.map(hotel => (
+								<Hotel key={hotel.id} hotel={hotel} />
+							))
+						:
+							<h1>'There aren't hotels for this event'</h1>
+				}
 			</Container>
 		)
 	}
