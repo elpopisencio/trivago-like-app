@@ -5,8 +5,7 @@ import Hotel from './hotel/Hotel';
 
 const Container = styled.div`
 	background-color: #37454d;
-	height: 100vh;
-	margin: auto;
+	padding: 1px;
 `;
 
 export default class Home extends Component {
