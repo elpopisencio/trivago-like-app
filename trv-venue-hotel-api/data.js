@@ -15,15 +15,17 @@ function getAmenities(){
 	}, []);
 }
 
-function getImages(){
-	return Array(faker.random.number(3) + 1)
+function getImages(index){
+	let images = Array(faker.random.number(3) + 1)
 		.fill()
 		.map(() => faker.image.imageUrl());
+	images[0] = '/img/hotel-' + (index + 1) + '.jpg';
+	return images;
 }
 
 const hotels = Array(6)
 	.fill()
-	.map(() => ({
+	.map((hotel, index) => ({
 		"id": faker.random.uuid(),
 		"name": faker.company.companyName() + ' Hotel',
 		"description": faker.lorem.sentence(),
@@ -31,7 +33,7 @@ const hotels = Array(6)
 		"rating": faker.random.number(50) / 10,
 		"price_category": getPriceCategory(),
 		"amenities": getAmenities(),
-		"images": getImages(),
+		"images": getImages(index),
   }));
 
 const rooms = hotels.reduce((total, current) => {
