@@ -13,8 +13,8 @@ export default class App extends Component {
         <Fragment>
           <Header />
           <Route exact path="/" render={props => <Home {...props} />} />
-          <Route path="/hotel" render={props => <Hotel {...props} />} />
-          <Route path="/confirmation" render={props => <Confirmation {...props} />} />
+          <Route path="/hotel/:id" render={props => <Hotel {...props} />} />
+          <Route path="/confirmation/:id" render={props => <Confirmation {...props} />} />
           <Route path="/administration" render={props => <Administration {...props} />} />
         </Fragment>
       </Router>
