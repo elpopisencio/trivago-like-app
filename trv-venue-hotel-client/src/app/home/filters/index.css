@@ -1,0 +1,5 @@
+.input-range__label--min,
+.input-range__label--max,
+.input-range__label--value {
+  display: none;
+}
