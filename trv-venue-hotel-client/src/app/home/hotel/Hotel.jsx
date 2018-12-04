@@ -9,10 +9,10 @@ const Container = styled.div`
 	max-width: 980px;
 	padding: 1em;
 	display: flex;
+	overflow: hidden;
 `;
 
 export default function Hotel({ hotel }){
-	console.log(hotel);
 	return (
 		<Container>
 			<Image src={hotel.images[0]}/>
