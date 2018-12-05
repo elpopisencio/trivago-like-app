@@ -13,13 +13,22 @@ const Container = styled.div`
 	overflow: hidden;
 `;
 
-export default function Room({ room }){
+export default function Room({ room, onBooking }) {
+	const id = uuidv4();
 	return (
 		<Container>
 			<Name>{room.name}</Name>
 			<div>{room.description}</div>
 			<div>{room.price_in_usd}</div>
-			<Link to={'/confirmation/' + room.id}>book now</Link>
+			<Link to={'/confirmation/' + id} onClick={() => onBooking(room, id)}>book now</Link>
 		</Container>
 	)
+}
+
+function uuidv4() {
+	return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+		// eslint-disable-next-line
+		var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+		return v.toString(16);
+	});
 }

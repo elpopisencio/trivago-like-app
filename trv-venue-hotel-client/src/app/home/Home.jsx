@@ -5,7 +5,8 @@ import Hotel from './hotel/Hotel';
 import Filters from './filters/Filters';
 
 const Container = styled.div`
-	background-color: #37454d;
+	background-color: ${props => props.theme['background-color']};
+	box-shadow: 0 0 10px ${props => props.theme['background-color']};
 	padding: 1px;
 	min-height: 100vh;
 `;
@@ -35,7 +36,7 @@ export default class Home extends Component {
 	render = () => {
 		const { hotels, filtered_hotels } = this.state;
 		if( hotels.length === 0 ){
-			return <div></div>
+			return <Container/>
 		}
 		return (
 			<Container>

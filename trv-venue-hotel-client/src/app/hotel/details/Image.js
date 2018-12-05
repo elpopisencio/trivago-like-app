@@ -7,4 +7,5 @@ export default styled.div`
 	background: url(${({ src }) => src}) no-repeat 0;
 	background-size: contain;
 	background-size: cover;
+	box-shadow: 0 0 10px #c5c5c5;
 `;
