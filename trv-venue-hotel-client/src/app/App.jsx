@@ -6,6 +6,7 @@ import Home from './home/Home';
 import Hotel from './hotel/Hotel';
 import Confirmation from './confirmation/Confirmation';
 import Administration from './administration/Administration';
+import NewHotel from './administration/newHotel/NewHotel';
 
 const theme = {
   'background-color': '#e4e6e7',
@@ -22,8 +23,9 @@ export default class App extends Component {
           <Route exact path="/" render={props => <Home {...props} />} />
           <Route path="/hotel/:id" render={props => <Hotel {...props} />} />
           <Route path="/confirmation/:id" render={props => <Confirmation {...props} />} />
+          <Route path="/administration/new-hotel" render={props => <NewHotel {...props} />} />
           <Route path="/administration" render={props => <Administration {...props} />} />
-        
+          
           </Fragment>
         </ThemeProvider>
       </Router>
