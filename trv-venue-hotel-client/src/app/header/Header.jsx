@@ -14,13 +14,14 @@ const Container = styled.header`
 `;
 
 export default function Header() {
+	const user = JSON.parse(localStorage.getItem("user"));
 	return (
 		<Container>
 			<Brand to='/'>
 				fake inc.
 			</Brand>
 			<User>
-				pepe123
+				{user ? user.user_name : ''}
 			</User>
 		</Container>
 	)

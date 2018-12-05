@@ -5,9 +5,10 @@ import Room from './room/Room';
 import Details from './details/Details';
 
 const Container = styled.div`
-	background-color: #37454d;
+	background-color: ${props => props.theme['background-color']};
 	padding: 1px;
 	min-height: 100vh;
+	box-shadow: 0 0 10px ${props => props.theme['background-color']};
 `;
 
 export default class Hotel extends Component {
@@ -29,7 +30,6 @@ export default class Hotel extends Component {
 			});
 		axios.get('/hotels?id=' + id)
 			.then((response) => {
-				console.log(response.data[0])
 				this.setState({
 					hotel: response.data[0],
 				})
@@ -45,10 +45,22 @@ export default class Hotel extends Component {
 			show_only_two: false,
 		})
 	}
+	handleBooking = (room, id) => {
+		const { hotel } = this.state;
+		const previous_booking = JSON.parse(localStorage.getItem("latest_booking"));
+		const user = JSON.parse(localStorage.getItem("user"));
+		const new_booking = { room, hotel, user };
+		let latest_booking;
+		if(previous_booking){
+			latest_booking = {...previous_booking, [id]: new_booking};
+		}else{
+			latest_booking = {[id]: new_booking};
+		}
+		localStorage.setItem('latest_booking', JSON.stringify(latest_booking));
+	}
 	render = () => {
 		const { rooms, hotel, show_only_two } = this.state;
 		if (rooms && hotel) {
-			const { match } = this.props;
 			let sorted_rooms = this.state.rooms.sort((a, b) => (
 				a.price_in_usd - b.price_in_usd
 			));
@@ -64,7 +76,7 @@ export default class Hotel extends Component {
 					}
 					{
 						sorted_rooms.map(room => (
-							<Room room={room} />
+							<Room onBooking={this.handleBooking} room={room} key={room.id}/>
 						))
 					}
 					{
@@ -75,6 +87,6 @@ export default class Hotel extends Component {
 				</Container>
 			)
 		}
-		return <Fragment />
+		return <Container />
 	}
 }
