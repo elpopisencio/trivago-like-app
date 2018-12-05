@@ -65,7 +65,7 @@ export default class Hotel extends Component {
 				a.price_in_usd - b.price_in_usd
 			));
 			let there_are_more = false;
-			if (show_only_two) {
+			if (show_only_two && sorted_rooms.length > 2) {
 				there_are_more = true;
 				sorted_rooms = sorted_rooms.slice(0, 2);
 			}
