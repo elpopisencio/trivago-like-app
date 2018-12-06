@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Name from './Name';
-import Image from './Image';
-import Link from './Link';
+import Title from '../../commonComponents/Title';
+import Image from '../../commonComponents/Image';
+import Link from '../../commonComponents/Link';
 
 const Container = styled.div`
 	background-color: #fff;
@@ -17,7 +17,7 @@ export default function Hotel({ hotel }){
 	return (
 		<Container>
 			<Image src={hotel.images[0]}/>
-			<Name>{hotel.name}</Name>
+			<Title>{hotel.name}</Title>
 			<div>{hotel.description}</div>
 			<div>{hotel.distance_to_venue}</div>
 			<Link to={'/hotel/' + hotel.id}>see more</Link>

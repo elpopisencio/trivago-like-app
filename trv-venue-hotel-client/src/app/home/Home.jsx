@@ -3,13 +3,7 @@ import styled from 'styled-components';
 import axios from 'axios';
 import Hotel from './hotel/Hotel';
 import Filters from './filters/Filters';
-
-const Container = styled.div`
-	background-color: ${props => props.theme['background-color']};
-	box-shadow: 0 0 10px ${props => props.theme['background-color']};
-	padding: 1px;
-	min-height: 100vh;
-`;
+import Container from '../commonComponents/Container';
 
 export default class Home extends Component {
 	state = {

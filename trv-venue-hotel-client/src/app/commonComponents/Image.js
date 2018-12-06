@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export default styled.div`
-	height: 200px;
-	flex: 0 0 200px;
+	height: 180px;
+	flex: 0 0 180px;
 	display: block;
 	background: url(${({ src }) => src}) no-repeat 0;
 	background-size: contain;
 	background-size: cover;
-	box-shadow: 0 0 10px #c5c5c5;
+    background-position: center;
 `;

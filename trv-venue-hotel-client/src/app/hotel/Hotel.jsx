@@ -3,13 +3,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 import Room from './room/Room';
 import Details from './details/Details';
-
-const Container = styled.div`
-	background-color: ${props => props.theme['background-color']};
-	padding: 1px;
-	min-height: 100vh;
-	box-shadow: 0 0 10px ${props => props.theme['background-color']};
-`;
+import Container from '../commonComponents/Container';
 
 export default class Hotel extends Component {
 	state = {

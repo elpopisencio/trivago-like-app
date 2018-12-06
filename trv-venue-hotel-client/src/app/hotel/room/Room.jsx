@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Name from './Name';
-import Image from './Image';
-import Link from './Link';
+import Title from '../../commonComponents/Title';
+import Link from '../../commonComponents/Link';
 
 const Container = styled.div`
 	background-color: #fff;
@@ -17,7 +16,7 @@ export default function Room({ room, onBooking }) {
 	const id = uuidv4();
 	return (
 		<Container>
-			<Name>{room.name}</Name>
+			<Title>{room.name}</Title>
 			<div>{room.description}</div>
 			<div>{room.price_in_usd}</div>
 			<Link to={'/confirmation/' + id} onClick={() => onBooking(room, id)}>book now</Link>

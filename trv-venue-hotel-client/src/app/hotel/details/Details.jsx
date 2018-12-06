@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Name from './Name';
-import Image from './Image';
-import Right from './Right';
+import Title from '../../commonComponents/Title';
+import Image from '../../commonComponents/Image';
 
 const Container = styled.div`
 	background-color: #fff;
@@ -19,7 +18,7 @@ export default function Details({ hotel }){
 	return (
 		<Container>
 			<Image src={hotel.images[0]}/>
-			<Name>{hotel.name}</Name>
+			<Title>{hotel.name}</Title>
 			<div>{hotel.description}</div>
 			<div>{hotel.distance_to_venue}</div>
 			</Container>

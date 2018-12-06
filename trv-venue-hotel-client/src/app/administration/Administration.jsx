@@ -2,14 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import Hotel from './hotel/Hotel';
-import Link from './Link';
-
-const Container = styled.div`
-	background-color: ${props => props.theme['background-color']};
-	box-shadow: 0 0 10px ${props => props.theme['background-color']};
-	padding: 1px;
-	min-height: 100vh;
-`;
+import Link from '../commonComponents/Link';
+import Container from '../commonComponents/Container';
 
 export default class Administration extends Component {
 	state = {
