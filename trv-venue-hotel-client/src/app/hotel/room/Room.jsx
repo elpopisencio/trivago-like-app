@@ -2,14 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import Title from '../../commonComponents/Title';
 import Link from '../../commonComponents/Link';
+import ButtonsContainer from '../../commonComponents/ButtonsContainer';
 
 const Container = styled.div`
 	background-color: #fff;
 	margin: 1em auto;
 	max-width: 980px;
 	padding: 1em;
-	display: flex;
 	overflow: hidden;
+	position: relative;
 `;
 
 export default function Room({ room, onBooking }) {
@@ -19,7 +20,9 @@ export default function Room({ room, onBooking }) {
 			<Title>{room.name}</Title>
 			<div>{room.description}</div>
 			<div>{room.price_in_usd}</div>
+			<ButtonsContainer>
 			<Link to={'/confirmation/' + id} onClick={() => onBooking(room, id)}>book now</Link>
+			</ButtonsContainer>
 		</Container>
 	)
 }

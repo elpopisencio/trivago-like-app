@@ -38,8 +38,6 @@ export default class Buttons extends Component {
 									type="checkbox"
 									checked={values[value]}
 									onChange={this.handleInputChange} />
-								<Checkmark
-									checked={values[value]} />
 							</Label>
 						)))
 					}

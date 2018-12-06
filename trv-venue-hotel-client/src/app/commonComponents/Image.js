@@ -7,5 +7,10 @@ export default styled.div`
 	background: url(${({ src }) => src}) no-repeat 0;
 	background-size: contain;
 	background-size: cover;
-    background-position: center;
+	background-position: center;
+	margin-right: 1em;
+	@media screen and (max-width: 780px) { 
+		height: 150px;
+		flex: 0 0 150px;
+	}
 `;

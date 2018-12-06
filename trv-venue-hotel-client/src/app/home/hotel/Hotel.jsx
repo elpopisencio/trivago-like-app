@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Title from '../../commonComponents/Title';
 import Image from '../../commonComponents/Image';
 import Link from '../../commonComponents/Link';
+import ButtonsContainer from '../../commonComponents/ButtonsContainer';
 
 const Container = styled.div`
 	background-color: #fff;
@@ -11,6 +12,7 @@ const Container = styled.div`
 	padding: 1em;
 	display: flex;
 	overflow: hidden;
+	position: relative;
 `;
 
 export default function Hotel({ hotel }){
@@ -18,9 +20,10 @@ export default function Hotel({ hotel }){
 		<Container>
 			<Image src={hotel.images[0]}/>
 			<Title>{hotel.name}</Title>
-			<div>{hotel.description}</div>
-			<div>{hotel.distance_to_venue}</div>
-			<Link to={'/hotel/' + hotel.id}>see more</Link>
+			<ButtonsContainer>
+			<Link to={'/hotel/' + hotel.id}>show more</Link>
+			<Link to={'/hotel/' + hotel.id}>find a room</Link>
+			</ButtonsContainer>
 		</Container>
 	)
 }

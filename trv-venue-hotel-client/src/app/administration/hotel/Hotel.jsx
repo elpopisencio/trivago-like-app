@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Title from '../../commonComponents/Title';
 import Image from '../../commonComponents/Image';
 import Button from '../../commonComponents/Button';
+import ButtonsContainer from '../../commonComponents/ButtonsContainer';
 
 const Container = styled.div`
 	background-color: #fff;
@@ -11,6 +12,7 @@ const Container = styled.div`
 	padding: 1em;
 	display: flex;
 	overflow: hidden;
+	position: relative;
 `;
 
 export default function Hotel({ hotel, onRemove }){
@@ -20,7 +22,10 @@ export default function Hotel({ hotel, onRemove }){
 			<Title>{hotel.name}</Title>
 			<div>{hotel.description}</div>
 			<div>{hotel.distance_to_venue}</div>
+			<ButtonsContainer>
 			<Button onClick={() => onRemove(hotel.id)}>remove</Button>
+
+			</ButtonsContainer>
 		</Container>
 	)
 }
