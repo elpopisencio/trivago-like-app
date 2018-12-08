@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import Input from './Input';
+import Form from './Form';
+import Label from './Label';
+import Select from './Select';
+import Button from '../../commonComponents/Button';
 
 const Container = styled.div`
 	background-color: ${props => props.theme['background-color']};
@@ -51,27 +56,31 @@ export default class NewHotel extends Component {
 		const { state, handleChange } = this;
 		return (
 			<Container>
-				<form onSubmit={this.handleSubmit}
+				<Form onSubmit={this.handleSubmit}
 					action='/administration'>
-				<input id='name'
+				<Label>name: <Input id='name'
 					value={state.name}
 					onChange={handleChange} />
-				<input id='description'
+					</Label>
+					<Label>description: <Input id='description'
 					value={state.description}
 					onChange={handleChange} />
-				<input id='distance_to_venue'
+					</Label>
+					<Label>distance to venue: <Input id='distance_to_venue'
 					value={state.distance_to_venue}
 					type='number'
 					min='0'
 					onChange={handleChange} />
-				<input id='rating'
+					</Label>
+					<Label>rating: <Input id='rating'
 					value={state.rating}
 					type='number'
 					min='0'
 					max='5'
 					onChange={handleChange} />
+					</Label>
 
-				<select value={state.price_category} id='price_category' onChange={this.handleChange}>
+				<Label>price category: <Select value={state.price_category} id='price_category' onChange={this.handleChange}>
 
 					<option value=''>choose one</option>
 					{
@@ -79,8 +88,9 @@ export default class NewHotel extends Component {
 							<option key={category} value={category}>{category}</option>
 						))
 					}
-				</select>
-				<select value='' id='amenities' onChange={this.handleAmenities}>
+				</Select>
+				</Label>
+				<Label>amenities: <Select value='' id='amenities' onChange={this.handleAmenities}>
 
 					<option value=''>choose one or many</option>
 					{
@@ -93,9 +103,10 @@ export default class NewHotel extends Component {
 								<option key={amenitie} value={amenitie}>{amenitie}</option>
 							))
 					}
-				</select>
-				<button type='submit'>save hotel</button>
-				</form>
+				</Select>
+				</Label>
+				<Button type='submit'>save hotel</Button>
+				</Form>
 			</Container>
 		)
 	}

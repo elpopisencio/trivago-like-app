@@ -40,7 +40,7 @@ export default class Distance extends Component {
   render = () => {
     return (
       <Container>
-        <h2>distance to venue</h2>
+        <p>distance to venue</p>
       <Inputs
         onChange={this.handleChange}
         value={this.state.value}

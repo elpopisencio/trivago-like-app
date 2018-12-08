@@ -24,7 +24,7 @@ export default class App extends Component {
           <Route path="/hotel/:id" render={props => <Hotel {...props} />} />
           <Route path="/confirmation/:id" render={props => <Confirmation {...props} />} />
           <Route path="/administration/new-hotel" render={props => <NewHotel {...props} />} />
-          <Route path="/administration" render={props => <Administration {...props} />} />
+          <Route exact path="/administration" render={props => <Administration {...props} />} />
           
           </Fragment>
         </ThemeProvider>

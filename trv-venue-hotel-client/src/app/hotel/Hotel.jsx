@@ -2,9 +2,10 @@ import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import Room from './room/Room';
-import Details from './details/Details';
+import HotelBox from '../commonComponents/HotelBox';
 import Container from '../commonComponents/Container';
 import Button from '../commonComponents/Button';
+import Box from '../commonComponents/Box';
 
 export default class Hotel extends Component {
 	state = {
@@ -67,7 +68,8 @@ export default class Hotel extends Component {
 			return (
 				<Container>
 					{
-						<Details hotel={this.state.hotel} />
+
+				<HotelBox hotel={this.state.hotel}/>
 					}
 					{
 						sorted_rooms.map(room => (
@@ -76,7 +78,7 @@ export default class Hotel extends Component {
 					}
 					{
 						there_are_more
-							? <Button onClick={this.handleButton}>show more</Button>
+							? <Box><Button onClick={this.handleButton}>show more rooms</Button></Box>
 							: <Fragment />
 					}
 				</Container>

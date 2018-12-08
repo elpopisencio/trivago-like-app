@@ -53,13 +53,13 @@ export default class Filters extends Component {
 		return (
 			<Container>
 				<Top>
-					<Delimeter>
+					<Delimeter with_margin>
 					<Filter><Distance {...this.props} onFilter={this.handleFilter} /></Filter>
 					</Delimeter>
-					<Delimeter>
+					<Delimeter with_margin>
 					<Filter><Rating {...this.props} onFilter={this.handleFilter} /></Filter>
 					</Delimeter>
-					<Delimeter>
+					<Delimeter with_margin>
 					<Filter><Prices {...this.props} onFilter={this.handleFilter} /></Filter>
 				</Delimeter>
 				<Delimeter>

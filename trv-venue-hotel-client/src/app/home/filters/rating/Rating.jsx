@@ -23,7 +23,7 @@ export default class Rating extends Component {
   render = () => {
     return (
       <Container>
-      <h2>rating</h2>
+      <p>rating</p>
         <Inputs
           onChange={this.handleChange}
           value={this.state.value}

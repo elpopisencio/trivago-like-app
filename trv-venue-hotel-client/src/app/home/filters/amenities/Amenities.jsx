@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Buttons from '../buttons/Buttons';
+import Filter from '../Filter';
 
 export default class Amenities extends Component{
 	state = {
@@ -31,7 +32,11 @@ export default class Amenities extends Component{
 	render = () => {
 		const { amenities } = this.state;
 		return (
-			<Buttons wraped values={amenities} onChange={this.handleChange} />
+			<Fragment>
+			<Filter>
+			<p>rating</p>
+				<Buttons wraped values={amenities} onChange={this.handleChange} /></Filter>
+			</Fragment>
 		)
 	}
 }

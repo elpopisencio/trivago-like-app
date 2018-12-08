@@ -10,4 +10,5 @@ padding-right: .5em;
 text-decoration: none;
 font-size: .7rem;
 background-color: #fff;
+width: fit-content;
 `;

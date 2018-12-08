@@ -4,8 +4,7 @@ import Input from './Input';
 
 const Container = styled.div`
 	display: flex;
-	padding: 0.5em 0;
-	 height: 2.5em;
+	padding: .5em 0;
 `;
 
 export default class Inputs extends Component{

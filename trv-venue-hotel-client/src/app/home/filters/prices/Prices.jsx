@@ -97,7 +97,7 @@ export default class Prices extends Component {
 	render = () => {
 		return (
 			<Container>
-				<h2>price category</h2>
+				<p>price category</p>
 
 				<Buttons values={this.state.prices} onChange={this.handleButtonsChange} />
 				<InputRange

@@ -4,7 +4,7 @@ import axios from 'axios';
 import Hotel from './hotel/Hotel';
 import Link from '../commonComponents/Link';
 import Container from '../commonComponents/Container';
-import ButtonsContainer from '../commonComponents/ButtonsContainer';
+import Box from '../commonComponents/Box';
 
 const Content = styled.div`
 margin: 1em auto;
@@ -56,13 +56,9 @@ export default class Administration extends Component {
 		}
 		return (
 			<Container>
-				<Content>
-					<ButtonsContainer>
+				<Box>
 					<Link to={this.props.match.path + '/new-hotel'}>add a new hotel</Link>
-				
-					</ButtonsContainer>
-				
-				</Content>
+				</Box>
 				{
 					hotels.map(hotel => (
 								<Hotel key={hotel.id} hotel={hotel} onRemove={this.handleRemove}/>

@@ -37,6 +37,19 @@ export default class Hotel extends Component{
 				<Image show_more={ show_more } src={hotel.images[0]}/>
 				<Delimeter>
 				<Title>{hotel.name}</Title>
+				<p>{hotel.description}</p>
+				<p>distance to venue: {hotel.distance_to_venue}m.</p>
+				<p>price category: {hotel.price_category}.</p>
+				{
+					show_more
+					? <Fragment>
+						<p>rating: {hotel.rating}</p>
+						<p>amenities: {hotel.amenities.map((amenitie, index) => (
+							index === (hotel.amenities.length - 1) ? amenitie + '.' : amenitie + ', '
+						))}</p>
+					</Fragment>
+					: <Fragment/>
+				}
 				{
 					is_expandable
 						? <ButtonsContainer>

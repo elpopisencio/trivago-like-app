@@ -18,6 +18,7 @@ align-items: center;
 	font-size: .75rem;
 	right: 1em;
 	bottom: 1em;
+	margin: 1px;
 ${({ checked }) => {
 		if (checked) {
 			return (`

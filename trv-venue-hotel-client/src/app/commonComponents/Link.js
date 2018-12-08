@@ -10,10 +10,10 @@ export default styled(Link)`
 	padding-right: .5em;
 	text-decoration: none;
 	font-size: .7rem;
-	margin-left: 1em;
+	margin-left: ${({no_margin}) => no_margin ? 0 : 1}em;
 	background-color: #fff;
 	@media screen and (max-width: 780px) { 
 		margin-left: 0;
-		margin-top: 1em;
+	margin-top: ${({no_margin}) => no_margin ? 0 : 1}em;
 	}
 `;
