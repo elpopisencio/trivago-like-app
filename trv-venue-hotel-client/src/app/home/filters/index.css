@@ -3,3 +3,17 @@
 .input-range__label--value {
   display: none;
 }
+
+.input-range__track--active {
+  background: #3273dc;
+}
+
+.input-range__slider {
+  background: #ffffff;
+  border: 1px solid #b5b5b5;
+  transition: none;
+}
+
+.input-range__slider:active {
+  transform: scale(1.2);
+}

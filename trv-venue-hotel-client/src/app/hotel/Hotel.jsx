@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Room from './room/Room';
 import Details from './details/Details';
 import Container from '../commonComponents/Container';
+import Button from '../commonComponents/Button';
 
 export default class Hotel extends Component {
 	state = {
@@ -75,7 +76,7 @@ export default class Hotel extends Component {
 					}
 					{
 						there_are_more
-							? <button onClick={this.handleButton}>show more</button>
+							? <Button onClick={this.handleButton}>show more</Button>
 							: <Fragment />
 					}
 				</Container>

@@ -8,6 +8,7 @@ import Prices from './prices/Prices';
 import Amenities from './amenities/Amenities';
 import Top from './Top';
 import Filter from './Filter';
+import Delimeter from '../../commonComponents/Delimeter';
 
 const Container = styled.div`
 	background-color: #fff;
@@ -52,12 +53,20 @@ export default class Filters extends Component {
 		return (
 			<Container>
 				<Top>
+					<Delimeter>
 					<Filter><Distance {...this.props} onFilter={this.handleFilter} /></Filter>
+					</Delimeter>
+					<Delimeter>
 					<Filter><Rating {...this.props} onFilter={this.handleFilter} /></Filter>
+					</Delimeter>
+					<Delimeter>
 					<Filter><Prices {...this.props} onFilter={this.handleFilter} /></Filter>
-				</Top>
+				</Delimeter>
+				<Delimeter>
 				<Amenities {...this.props} onFilter={this.handleFilter} />
-			</Container>
+			</Delimeter>
+					</Top>
+				</Container>
 		)
 	}
 }

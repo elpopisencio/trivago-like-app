@@ -9,7 +9,11 @@ export default styled(Link)`
 	padding-left: .5em;
 	padding-right: .5em;
 	text-decoration: none;
-	font-size: .75rem;
+	font-size: .7rem;
 	margin-left: 1em;
 	background-color: #fff;
+	@media screen and (max-width: 780px) { 
+		margin-left: 0;
+		margin-top: 1em;
+	}
 `;

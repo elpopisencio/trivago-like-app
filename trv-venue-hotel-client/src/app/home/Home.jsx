@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import Hotel from './hotel/Hotel';
+import Hotel from '../commonComponents/HotelBox';
 import Filters from './filters/Filters';
 import Container from '../commonComponents/Container';
 
@@ -39,7 +39,7 @@ export default class Home extends Component {
 					filtered_hotels.length !== 0 
 						? 
 							filtered_hotels.map(hotel => (
-								<Hotel key={hotel.id} hotel={hotel} />
+								<Hotel is_expandable key={hotel.id} hotel={hotel} />
 							))
 						:
 							<h1>'There aren't hotels for this event'</h1>

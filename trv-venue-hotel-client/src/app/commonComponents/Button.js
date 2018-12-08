@@ -8,7 +8,6 @@ height: 2.25em;
 padding-left: .5em;
 padding-right: .5em;
 text-decoration: none;
-font-size: .75rem;
-margin-left: 1em;
+font-size: .7rem;
 background-color: #fff;
 `;
